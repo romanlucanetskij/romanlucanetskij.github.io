@@ -1,0 +1,543 @@
+/* Загальні стилі */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #121212; /* Темний фон */
+    color: #f0f0f0; /* Світлий текст */
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Навігаційна панель */
+.header {
+    background: #1e1e1e;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #FFD700; /* Золотистий колір */
+}
+
+.navbar {
+    float: right;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #FFD700; /* Золотистий при наведенні */
+}
+
+/* Головний банер */
+.hero {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    background-color: #000; /* Половина монотонного чорного */
+}
+
+.hero-left {
+    width: 50%;
+}
+
+.hero-right {
+    width: 50%;
+    position: relative;
+    background: rgba(128, 128, 128, 0.5); /* Прозорий сірий */
+}
+
+.hero-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.hero-left h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #FFD700;
+}
+
+.hero-left p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 14px 35px;
+    background: linear-gradient(45deg, #FFD700, #FFA500); /* Градієнтний золотистий */
+    color: #121212;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: transform 0.3s, background 0.3s;
+    font-size: 18px;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #FFA500, #FFD700);
+}
+
+/* Розділ "Про Нас" */
+.about {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.about h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #FFD700;
+}
+
+.about p {
+    font-size: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Розділ "Продукти" */
+.products {
+    padding: 80px 0;
+    background-color: #1e1e1e;
+    text-align: center;
+}
+
+.products h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: #FFD700;
+}
+
+.product-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.card {
+    background: #2c2c2c;
+    border-radius: 10px;
+    width: 30%;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    font-size: 24px;
+    margin: 15px 0;
+    color: #FFD700;
+}
+
+.card p {
+    font-size: 16px;
+    color: #ccc;
+}
+
+.card .btn {
+    margin-top: 10px;
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #121212;
+    text-decoration: none;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 215, 0, 0.5); /* Золотистий тіньовий ефект */
+}
+
+/* Розділ "Додати Запис" */
+.add-record {
+    padding: 80px 0;
+    background-color: #121212;
+    text-align: center;
+}
+
+.add-record h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #FFD700;
+}
+
+.add-record form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.add-record input, .add-record textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.add-record input::placeholder, .add-record textarea::placeholder {
+    color: #888;
+}
+
+.add-record textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.add-record button {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #121212;
+    border: none;
+    border-radius: 30px;
+    padding: 14px 35px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.add-record button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #FFA500, #FFD700);
+}
+
+#addMessage {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Розділ "Вивести Дані" */
+.display-data {
+    padding: 80px 0;
+    background-color: #1e1e1e;
+    text-align: center;
+}
+
+.display-data h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: #FFD700;
+}
+
+.display-data #sortBtn {
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #121212;
+}
+
+.display-data table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+.display-data th, .display-data td {
+    border: 1px solid #444;
+    padding: 12px;
+    text-align: center;
+}
+
+.display-data th {
+    background-color: #2c2c2c;
+    color: #FFD700;
+}
+
+.display-data tr:nth-child(even) {
+    background-color: #2c2c2c;
+}
+
+.display-data tr:hover {
+    background-color: #3a3a3a;
+}
+
+.display-data .action-btn {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #121212;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+    margin: 2px;
+}
+
+.display-data .action-btn:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #FFA500, #FFD700);
+}
+
+/* Розділ "Фільтрація" */
+.filter-data {
+    padding: 80px 0;
+    background-color: #121212;
+    text-align: center;
+}
+
+.filter-data h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #FFD700;
+}
+
+.filter-data form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.filter-data input, .filter-data button {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.filter-data button {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #121212;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.filter-data button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #FFA500, #FFD700);
+}
+
+#filtered-records table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+#filtered-records th, #filtered-records td {
+    border: 1px solid #444;
+    padding: 12px;
+    text-align: center;
+}
+
+#filtered-records th {
+    background-color: #2c2c2c;
+    color: #FFD700;
+}
+
+#filtered-records tr:nth-child(even) {
+    background-color: #2c2c2c;
+}
+
+#filtered-records tr:hover {
+    background-color: #3a3a3a;
+}
+
+#filtered-records .action-btn {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #121212;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+    margin: 2px;
+}
+
+#filtered-records .action-btn:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #FFA500, #FFD700);
+}
+
+/* Розділ "Зворотний Зв'язок" */
+.contact {
+    padding: 80px 0;
+    background-color: #1e1e1e;
+    text-align: center;
+}
+
+.contact h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #FFD700;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact input::placeholder, .contact textarea::placeholder {
+    color: #888;
+}
+
+.contact textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.contact button {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #121212;
+    border: none;
+    border-radius: 30px;
+    padding: 14px 35px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.contact button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #FFA500, #FFD700);
+}
+
+#formMessage {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #FFD700;
+}
+
+/* Футер */
+footer {
+    background: #1e1e1e;
+    color: #f0f0f0;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* White Space (Від'ємне Простір) */
+section {
+    margin-bottom: 60px;
+}
+
+/* Адаптивність */
+@media (max-width: 992px) {
+    .product-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-left, .hero-right {
+        width: 100%;
+    }
+
+    .hero-right img {
+        height: 300px;
+    }
+
+    .display-data table, #filtered-records table {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Приховуємо навігаційні посилання на малих екранах */
+    }
+
+    /* Мобільне меню (можна додати пізніше) */
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+
+    .about h2, .products h2, .contact h2 {
+        font-size: 32px;
+    }
+
+    .about p, .products p, .contact p {
+        font-size: 16px;
+    }
+
+    .card h3 {
+        font-size: 22px;
+    }
+
+    .card p {
+        font-size: 14px;
+    }
+
+    .add-record input, .add-record textarea,
+    .filter-data input, .filter-data button,
+    .contact input, .contact textarea {
+        max-width: 100%;
+    }
+}

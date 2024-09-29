@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бюро Ремонту</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Підключення Google Fonts: Raleway та Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Навігаційна панель -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">БюроРемонту</div>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="#home">Головна</a></li>
+                    <li><a href="#add">Додати Запис</a></li>
+                    <li><a href="#display">Вивести Дані</a></li>
+                    <li><a href="#contact">Контакти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Головний банер -->
+    <section id="home" class="hero">
+        <div class="hero-left">
+            <h1>Ласкаво просимо до Бюро Ремонту</h1>
+            <p>Управляйте своїми ремонтними роботами ефективно та зручно.</p>
+            <a href="#products" class="btn">Розпочати</a>
+        </div>
+        <div class="hero-right">
+            <img src="images/hero-bg.jpg" alt="Ремонтні роботи">
+        </div>
+    </section>
+
+    <!-- Розділ "Про Нас" -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Про Нас</h2>
+            <p>Ми - команда професіоналів з багаторічним досвідом у сфері ремонту. Надаємо якісні послуги за доступними цінами.</p>
+        </div>
+    </section>
+
+    <!-- Розділ "Продукти" (Меню у вигляді карток) -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2>Наші Продукти</h2>
+            <div class="product-cards">
+                <div class="card">
+                    <img src="images/product1.jpg" alt="Продукт 1">
+                    <h3>Додати Запис</h3>
+                    <p>Впишіть всі необхідні дані для управління ремонтними роботами.</p>
+                    <a href="#add" class="btn">Додати</a>
+                </div>
+                <div class="card">
+                    <img src="images/product2.jpg" alt="Продукт 2">
+                    <h3>Вивести Дані</h3>
+                    <p>Перегляньте всі ваші записи у зручній таблиці.</p>
+                    <a href="#display" class="btn">Переглянути</a>
+                </div>
+                <div class="card">
+                    <img src="images/product3.jpg" alt="Продукт 3">
+                    <h3>Фільтрація</h3>
+                    <p>Фільтруйте записи за різними критеріями для зручності.</p>
+                    <a href="#filter" class="btn">Фільтрувати</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Розділ "Додати Запис" -->
+    <section id="add" class="add-record">
+        <div class="container">
+            <h2>Додати Новий Запис</h2>
+            <form id="addForm">
+                <input type="text" id="city" placeholder="Місто" required>
+                <input type="text" id="address" placeholder="Адреса" required>
+                <input type="text" id="work_type" placeholder="Вид Робіт" required>
+                <input type="number" step="0.01" id="cost" placeholder="Вартість (грн)" required>
+                <input type="date" id="start_date" placeholder="Дата Початку" required>
+                <input type="date" id="end_date" placeholder="Дата Завершення" required>
+                <button type="submit" class="btn">Додати</button>
+            </form>
+            <p id="addMessage"></p>
+        </div>
+    </section>
+
+    <!-- Розділ "Вивести Дані" -->
+    <section id="display" class="display-data">
+        <div class="container">
+            <h2>Всі Записи</h2>
+            <button id="sortBtn" class="btn">Сортувати за Вартістю</button>
+            <div id="all-records">
+                <!-- Таблиця з даними буде генеруватись JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Розділ "Фільтрація" -->
+    <section id="filter" class="filter-data">
+        <div class="container">
+            <h2>Фільтрація Записів</h2>
+            <form id="filterForm">
+                <input type="number" step="0.01" id="min_cost" placeholder="Мінімальна Вартість (грн)">
+                <input type="text" id="city_filter" placeholder="Місто">
+                <input type="text" id="address_filter" placeholder="Адреса">
+                <button type="submit" class="btn">Фільтрувати</button>
+            </form>
+            <div id="filtered-records">
+                <!-- Відфільтровані дані будуть генеруватись JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Розділ "Форма Зворотного Зв'язку" -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Зворотний Зв'язок</h2>
+            <form action="https://formspree.io/f/mdknqdrz" method="POST">
+                <input type="text" name="name" placeholder="Ваше ім'я" required>
+                <input type="email" name="_replyto" placeholder="Ваш email" required>
+                <textarea name="message" placeholder="Ваше повідомлення" required></textarea>
+                <button type="submit" class="btn">Надіслати</button>
+            </form>
+            <p id="formMessage"></p>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Бюро Ремонту. Всі права захищені.</p>
+        </div>
+    </footer>
+
+    <!-- Додаткові скрипти -->
+    <script src="scripts.js"></script>
+</body>
+</html>
